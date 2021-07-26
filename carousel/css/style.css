@@ -1,0 +1,20 @@
+body {
+    background: linear-gradient(120deg, #6583a8, #0c7b93);
+    overflow: hidden;
+}
+
+.carousel-item {
+    height: 100vh;
+    transition: transform .6s ease-in;
+}
+
+.carousel-item h1 {
+    padding-top: 2vh;
+    color : #FCF6F5;
+    text-align: center;
+}
+
+.contents {
+    height: 85vh;
+    text-align : center;
+}
