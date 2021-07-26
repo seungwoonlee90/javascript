@@ -1,0 +1,32 @@
+section {
+    position: relative;
+    height: 90vh;
+    widows: 100vw;
+}
+
+section .card {
+    position: absolute;
+    width: 300px;
+    height: 300px;    
+    padding: 20px;
+    border-radius: 10px;
+}
+
+section .card:nth-child(1) {
+    background-color: #1380A1;
+}
+
+section .card:nth-child(2) {
+    background-color: #FAAB18;
+}
+
+section .card:nth-child(3) {
+    background-color: #990000;
+}
+
+.startButton {
+    position: relative;
+    left: 50%;
+    z-index: 100;
+    left: 50%;
+}
