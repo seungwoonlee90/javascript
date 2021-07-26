@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="letterize_basic.css">
+    <script src="https://cdn.jsdelivr.net/npm/letterizejs/lib/letterize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div class="animate-me">
+          this is my first
+        </div>
+        <div class="animate-me">
+          anime.js&letterize.js
+        </div>
+        <div class="animate-me">
+          how cool, isn't it ?
+        </div>
+        <div class="animate-me">
+          I like this one
+        </div>
+        <div class="animate-me">
+          - Ethan Lee -
+        </div>
+    </div>
+    <script>
+        const test = new Letterize({
+            targets: ".animate-me"
+          });
+    
+          const animation = anime.timeline({
+            targets: test.listAll,
+            delay: anime.stagger(100, {
+              grid: [test.list[0].length, test.list.length],
+              from: "center"
+            }),
+            loop: true
+          });
+    
+          animation
+            .add({
+              scale: 0.4
+            })
+            .add({
+              letterSpacing: "10px"
+            })
+            .add({
+              scale: 1
+            })
+            .add({
+              letterSpacing: "6px"
+            });
+    </script>
+</body>
+</html>
