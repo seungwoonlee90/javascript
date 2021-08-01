@@ -8,10 +8,13 @@ num.innerText = 0;
 
 // reducer's role : changes my data
 function countModifier(count = 0, action) {
-  if (action.type === "ADD") {
-    return count + 1;
-  } else if (action.type === "MINUS") {
-    return count - 1;
+  switch (action.type) {
+    case "ADD" :
+      return count + 1;
+    case "MINUS" :
+      return count - 1;
+    default :
+      return count;
   }
 }
 
