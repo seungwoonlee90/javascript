@@ -23,26 +23,34 @@ const reducer = (state = [], action) => {
 const store = createStore(reducer);
 store.subscribe(()=> console.log(store.getState()));
 
+function addToDo(text) {
+    store.dispatch({
+        type : ADD_TODO,
+        text})
+}
+
+function deleteToDo(e) {
+    const id = e.target.parentNode.id;
+    store.dispatch({ type : DELETE_TODO, id})
+}
+
 function paintToDos() {
     ul.innerHTML = "";
     const toDos = store.getState();
     toDos.forEach(toDo => {
         const li = document.createElement("li");
-        li.id = toDo.id
-        li.innerText = toDo.text
+        const button = document.createElement("button");
+        button.innerText = "Delete";
+        button.addEventListener("click", deleteToDo)
+        li.id = toDo.id;
+        li.innerText = toDo.text;
+        li.appendChild(button);
         ul.appendChild(li);
     })
 }
 
 store.subscribe(paintToDos);
 
-
-function addToDo(text) {
-
-    store.dispatch({
-        type : ADD_TODO,
-        text})
-}
 
 function onSubmit(event) {
     event.preventDefault();
