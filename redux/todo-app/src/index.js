@@ -15,7 +15,7 @@ const reducer = (state = [], action) => {
                 id : Date.now()
             }, ...state]
         case DELETE_TODO :
-            return [];
+            return state.filter(toDo => toDo.id !== action.id);
         default :
             return state;
     }
@@ -30,7 +30,7 @@ function addToDo(text) {
 }
 
 function deleteToDo(e) {
-    const id = e.target.parentNode.id;
+    const id = parseInt(e.target.parentNode.id);
     store.dispatch({ type : DELETE_TODO, id})
 }
 
