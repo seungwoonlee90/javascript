@@ -12,10 +12,10 @@ const server = http.createServer(async (res, req) => {
         res.end(err.message);
     }
 })
-    .listen(8080);
+    .listen(8081);
     
 server.on('listening', ()=>{
-    console.log('8080포트에서 서버 대기중 !');
+    console.log('8081포트에서 서버 대기중 !');
 });
 
 server.on('error', (error)=>{
