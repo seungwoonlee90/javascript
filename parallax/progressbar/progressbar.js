@@ -10,5 +10,5 @@ window.addEventListener("scroll" , function(event) {
     scrollTop = document.documentElement.scrollTop;
     let percent = Math.ceil((scrollTop / (document.body.scrollHeight - window.outerHeight)) * 100);
 
-    bar.style.width = percent + "%"
+    bar.style.height = percent + "%"
 });
