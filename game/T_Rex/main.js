@@ -29,5 +29,24 @@ class Cactus {
     }
 }
 
-let cactus = new Cactus();
-cactus.draw();
+let timer = 0;
+let cactuss = [];
+
+function frame(){
+    requestAnimationFrame(frame);
+    timer ++;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    if (timer % 100 === 0){
+        let cactus = new Cactus();
+        cactuss.push(cactus);
+    }
+    cactuss.forEach((a)=>{
+        a.x--;
+        a.draw();
+    })
+
+    dino.draw();
+}
+
+frame();
