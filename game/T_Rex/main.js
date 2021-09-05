@@ -41,8 +41,12 @@ function frame(){
         let cactus = new Cactus();
         cactuss.push(cactus);
     }
-    cactuss.forEach((a)=>{
-        a.x--;
+    cactuss.forEach((a, i, o)=>{
+        
+        if(a.x < 0) {
+            o.splice(i, 1)
+        }
+
         a.draw();
     })
 
