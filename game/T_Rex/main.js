@@ -46,11 +46,21 @@ function frame(){
         if(a.x < 0) {
             o.splice(i, 1)
         }
-
         a.draw();
     })
+    if(jump === true){
+        dino.y --;   
+    }
 
     dino.draw();
 }
 
 frame();
+
+
+let jump = false
+document.addEventListener('keydown', function(e) {
+    if(e.code === "Space") {
+        jump = true
+    }
+})
