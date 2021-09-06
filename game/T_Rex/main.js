@@ -30,7 +30,9 @@ class Cactus {
 }
 
 let timer = 0;
+let jump_timer = 0;
 let cactuss = [];
+let jump = false ;
 
 function frame(){
     requestAnimationFrame(frame);
@@ -46,21 +48,34 @@ function frame(){
         if(a.x < 0) {
             o.splice(i, 1)
         }
+        a.x--;
         a.draw();
     })
-    if(jump === true){
-        dino.y --;   
+
+
+    if (jump) {
+        dino.y--;
+        jump_timer++;
     }
+    if (!jump) {
+        if (dino.y < 200) {
+            dino.y++;
+        }
+    }
+
+    if (jump_timer > 100) {
+        jump = false;
+        jump_timer = 0;
+    }
+
 
     dino.draw();
 }
 
 frame();
 
-
-let jump = false
 document.addEventListener('keydown', function(e) {
     if(e.code === "Space") {
-        jump = true
+       jump = true;
     }
 })
