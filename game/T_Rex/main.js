@@ -33,9 +33,10 @@ let timer = 0;
 let jump_timer = 0;
 let cactuss = [];
 let jump = false ;
+let animation;
 
 function frame(){
-    requestAnimationFrame(frame);
+    animation = requestAnimationFrame(frame);
     timer ++;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -48,6 +49,9 @@ function frame(){
         if(a.x < 0) {
             o.splice(i, 1)
         }
+
+        collision(dino, a);
+
         a.x--;
         a.draw();
     })
@@ -73,6 +77,18 @@ function frame(){
 }
 
 frame();
+
+
+function collision(dino, cactus){
+    let xcoord = cactus.x - (dino.x + dino.width);
+    let ycoord = cactus.y - (dino.y + dino.height);
+    if(xcoord < 0 && ycoord <0) {
+        ctx.clearRect(0,0, canvas.width, canvas.height);
+        cancelAnimationFrame(animation)
+    }
+} 
+
+
 
 document.addEventListener('keydown', function(e) {
     if(e.code === "Space") {
