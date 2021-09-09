@@ -88,4 +88,6 @@ section a.btnView {
 	color: #fff;
 	line-height: 32px;
 	text-align: center;
+	background : linear-gradient(45deg, #4affff, #35e0f7);
+	box-shadow: 5px 10px 20px rgba(0, 255, 255, 0.493);
 }
