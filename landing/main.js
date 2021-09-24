@@ -23,18 +23,18 @@ let countDownDate = new Date("Dec 31, 2021 00:00:00").getTime();
         if(seconds < 10) {
             seconds = "0" + seconds;
         }
-    
-        document.getElementById("days").innerHTML = days;
-        document.getElementById("hours").innerHTML = hours;
-        document.getElementById("minutes").innerHTML = minutes;
-        document.getElementById("seconds").innerHTML = seconds;
+        
+        $("#days").html(days);
+        $("#hours").html(hours);
+        $("#minutes").html(minutes);
+        $("#seconds").html(seconds);
     
         if(last < 0 ) {
             clearInterval(x);
-            document.getElementById("days").innerHTML = "00";
-            document.getElementById("hours").innerHTML = "00";
-            document.getElementById("minutes").innerHTML = "00";
-            document.getElementById("seconds").innerHTML = "00";
+            $("#days").html("00");
+            $("#hours").html("00");
+            $("#minutes").html("00");
+            $("#seconds").html("00");
         }
 
 
