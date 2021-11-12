@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="content">
+      <ul>
+        <li><p>for of 구문</p></li>
+        <li><p>정규표현식, / /g, /\+/g, /-/g</p></li>
+        <li><p>2진법 변환, parseInt(number,2)</p></li>
+        <li><p>아스키코드문자열변환, parseInt(number,2)</p></li>
+      </ul>
+    </div>
+    <script>
+      let data = [
+        "   + -- + - + -   ",
+        "   + --- + - +   ",
+        "   + -- + - + -   ",
+        "   + - + - + - +   ",
+      ];
+      let result = "";
+      for (let i of data) {
+        result += String.fromCharCode(
+          parseInt(
+            i.replace(/ /g, "").replace(/\+/g, "1").replace(/-/g, "0"),
+            2
+          )
+        );
+      }
+      console.log(result);
+    </script>
+  </body>
+</html>
