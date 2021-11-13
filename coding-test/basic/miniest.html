@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function main(a, b, c) {
+        let answer;
+        if (a < b) {
+          answer = a;
+        } else {
+          answer = b;
+        }
+        if (c < answer) {
+          answer = c;
+        }
+
+        return answer;
+      }
+      console.log(main(11, 4, 6));
+    </script>
+  </body>
+</html>
