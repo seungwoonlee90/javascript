@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //삼각형이 되려면 짧은 막대 두개의 합이 긴막대보다 커야한다.
+      function main(a, b, c) {
+        let answer = "Yes";
+        let max;
+        let sum = a + b + c;
+
+        if (a > b) {
+          max = a;
+        } else {
+          max = b;
+        }
+        if (c > max) {
+          max = c;
+        }
+        if (sum - max <= max) {
+          answer = "No";
+        }
+        return answer;
+      }
+      console.log(main(5, 7, 11));
+    </script>
+  </body>
+</html>
